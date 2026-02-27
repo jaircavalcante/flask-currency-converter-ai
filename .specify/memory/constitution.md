@@ -1,50 +1,40 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+# Dolar Converter Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### I. Clean Code & Simplicity
+Code must be readable, straightforward, and self-explanatory. Favor clarity over cleverness. Single responsibility per function; avoid premature optimization or unnecessary complexity. YAGNI principle: implement only what is needed now. Maximum function length: ~30 lines unless exceptional circumstances.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### II. Clear Naming & Documentation
+Use descriptive names for functions, variables, and modules. Variable names must reveal intent. Comments explain the "why" when logic is non-obvious. Function signatures must be clear—parameters and return types documented. Keep documentation close to code.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### III. Single Responsibility
+Each module, class, or function has one reason to change. Currency conversion logic separate from I/O handling. No god objects. Composition preferred over inheritance. Promote reusability through focused, single-purpose units.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### IV. Error Handling & Robustness
+Invalid inputs must be handled gracefully with clear error messages. No silent failures. Edge cases (boundary values, unusual inputs) anticipated and tested manually during development. Stack traces captured but user-facing errors remain user-friendly.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### V. Practical Development Workflow
+No mandatory automated testing; manual verification sufficient for small scope. Code review (peer or self) required before merging. Commits must be atomic and have clear messages. Keep iteration cycles short; deploy incrementally.
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+## Code Quality Standards
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
+- **Naming conventions**: camelCase for variables/functions, PascalCase for classes/types
+- **Line length**: Max 100 characters (readability before strict limits)
+- **Comments**: Explain intent, not what is obvious from code
+- **DRY principle**: Extract repeated logic into reusable functions
+- **Avoid magic numbers**: Use named constants with clear purpose
 
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
+## Development Workflow
 
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+1. Feature branches from `main` with descriptive names
+2. Self-review or peer-review before merge (clarity check + logic verification)
+3. Clear, atomic commit messages
+4. Manual testing of happy path + known edge cases
+5. Merge only when code is clean and documented
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+This constitution governs quality and structure decisions. Amendments must document rationale and impact on existing codebase. All decisions prioritize clarity and maintainability over feature velocity. Complexity must be justified; simple solutions preferred by default.
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+**Version**: 1.0.0 | **Ratified**: 2026-02-27 | **Last Amended**: 2026-02-27
