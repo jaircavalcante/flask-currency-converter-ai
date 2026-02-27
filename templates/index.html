@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Conversor de Moedas</title>
+    <link rel="stylesheet" href="/static/style.css">
+  </head>
+  <body>
+    <main>
+      <h1>Conversor de Moedas (USD ↔ BRL)</h1>
+      {% if error %}
+      <div class="error">{{ error }}</div>
+      {% endif %}
+      <form action="/convert" method="post">
+        <label>Valor
+          <input type="text" name="amount" required>
+        </label>
+        <label>De
+          <select name="source">
+            <option value="USD">USD</option>
+            <option value="BRL">BRL</option>
+            <option value="CLP">CLP</option>
+            <option value="EUR">EUR</option>
+            <option value="GBP">GBP</option>
+          </select>
+        </label>
+        <label>Para
+          <select name="target">
+            <option value="BRL">BRL</option>
+            <option value="USD">USD</option>
+            <option value="CLP">CLP</option>
+            <option value="EUR">EUR</option>
+            <option value="GBP">GBP</option>
+          </select>
+        </label>
+        <button type="submit">Converter</button>
+      </form>
+    </main>
+  </body>
+</html>

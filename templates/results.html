@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Resultado - Conversor</title>
+    <link rel="stylesheet" href="/static/style.css">
+  </head>
+  <body>
+    <main>
+      <h1>Resultado da Conversão</h1>
+      <p>{{ result.sourceAmount }} {{ result.sourceCurrency }} = <strong>{{ result.resultAmount }} {{ result.targetCurrency }}</strong></p>
+      <p>Taxa usada: {{ result.exchangeRate }} ({{ result.rateSource }})</p>
+      <p>Taxa atualizada em: {{ result.rateTimestamp }}</p>
+      <p>Conversão em: {{ result.conversionTimestamp }}</p>
+      <a href="/">Nova conversão</a>
+    </main>
+  </body>
+</html>
