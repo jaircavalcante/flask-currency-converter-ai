@@ -1,6 +1,6 @@
 # Dolar Converter — MVP
 
-Aplicação Flask simples para conversão de moedas (USD, BRL, CLP, EUR, GBP) usando uma API pública de taxas de câmbio.
+Aplicação Flask simples para conversão de moedas (USD, BRL, CLP, EUR, GBP) usando uma API pública de taxas de câmbio. =D
 
 Run locally:
 
